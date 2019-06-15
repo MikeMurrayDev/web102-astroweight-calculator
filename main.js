@@ -78,7 +78,6 @@ function reverseArray(e){
           select.remove(i);
       }
   }
-
   removeOptions(document.getElementById("planets"));
 
   planets.reverse().forEach(function(element){
