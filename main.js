@@ -13,7 +13,7 @@ var planets = [
     ['Sun', 27.9]
   ];
   
-// 1. Populate the dropdown element with the data found in the planets array. 
+// 1. Populate the dropdown element with the data found in the planets array
 var select = document.getElementById("planets");
 var theInput = document.getElementById("user-weight");
 
@@ -24,23 +24,21 @@ planets.forEach(function(element){
     newSelect.appendChild(planetNameOption);
     select.appendChild(newSelect);
 })
-  
-var newWeight;
 
-// 7. Set the #calculate-button element's onclick method to use the handleClickEvent function.
+
+// 7. Set the #calculate-button element's onclick method to use the handleClickEvent function
 function handleClickEvent(e) {
 
-  // 4. Create a variable called planetName and assign the name of the selected planet from the drop down.
+  // 4. Create a variable called planetName and assign the name of the selected planet from the drop down
   var planetName = select.options[select.selectedIndex].text;
   console.log('Planet Name: ' + planetName);
 
-  // 3. Create a variable called userWeight and assign the value of the user's weight.
+  // 3. Create a variable called userWeight and assign the value of the user's weight
   var userWeight = theInput.value;
   console.log('User Weight: ' + userWeight);        
 
   // Creating a for loop with a nested for loop in order to find the planet multiplier, 
   // which is an index of an array that belongs to a parent array
-
   for (var i = 0; i < planets.length; i++){
     for (var k = 0; k < planets[i].length; k++){
       if (planets[i][0] === planetName) {
@@ -51,23 +49,25 @@ function handleClickEvent(e) {
     }
   }    
 
-  // 5. Create a variable called result and assign the value of the new calculated weight.
+  // 5. Create a variable called result and assign the value of the new calculated weight
   calculateWeight(userWeight, planetMultiplier);
 }
 
+// Taking the user's entered weight and multiplying it by the planet's mass multiplier
 function calculateWeight(userWeight, planetMultiplier) {
   
   // 2. Write the code to return the correct weight 
   var newWeight = userWeight * planetMultiplier;
   console.log('New Weight: ' + newWeight);
 
-// 6. Write code to display the message shown in the screenshot.
+// 6. Write code to display the message shown in the screenshot
   var output = document.getElementById("output");
   output.innerHTML = newWeight;
   console.log('Output Message: ' + output.innerHTML);
 }  
 
-// 8. Reverse the drop down order so that the sun is first.
+
+// 8. Reverse the drop down order so that the sun is first
 function reverseArray(e){
 
   // Removing options from our select so that we can populate the dropdown with our new reversed list
@@ -78,7 +78,6 @@ function reverseArray(e){
           select.remove(i);
       }
   }
-
   removeOptions(document.getElementById("planets"));
 
   planets.reverse().forEach(function(element){
@@ -87,11 +86,4 @@ function reverseArray(e){
     newSelect.appendChild(planetNameOption);
     select.appendChild(newSelect);
   })
-
-
 }
-
-  
-  // Bonus Challenges
-
-  // 9. Make it look nice using bootstrap (http://getbootstrap.com/getting-started/)
