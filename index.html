@@ -3,10 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Astro Weight Calculator</title>
+    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>$(function() { alert('hello') });</script> -->
   </head>
   <body>
      <!-- Write your markup here  -->
+     <input id="user-weight" type="text" placeholder="Weight (lbs)" />
+     <select id="planets"></select>
+     <p id="output"></p>
+     <button id="calculate-button" onclick="handleClickEvent()">Calculate</button>
 
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="main.js" charset="utf-8"></script>
   </body>
 </html>
